@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Design</title>
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "aarticle article aside"
+        "footer footer footer";
+    grid-template-columns: 0fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: white;
+    perspective: 1000px; 
+}
+
+header {
+    grid-area: header;
+    background-color: lightblue;
+    padding: 20px;
+    text-align: left;
+}
+header > nav{
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+article {
+    grid-area: article;
+    background-color: #71aaea;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    right: 20px;
+    
+}
+
+article > section {
+    background-color: coral;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+aside {
+    grid-area: aside;
+    background-color: lightpurple;
+    padding: 20px;
+    text-align: center;
+    background-color: #b598bd;
+}
+
+footer {
+    grid-area: footer;
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}
+
+header, article, aside, footer , nav, section{
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+    </style>
+</head>
+<body>
+    <header>
+        Header
+        <nav>Nav</nav>
+    </header>
+    <article>
+        article
+        <section>Section 1</section>
+        <section>Section 2</section>
+        <section>Section 3</section>
+    </article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+</body>
+</html>
